@@ -1,0 +1,6 @@
+{
+  "summary":  "Implementation plan to fix the GitHub Pages blank screen by switching the deployment source to GitHub Actions or setting up a /docs deployment.",
+  "updatedAt":  "2026-10-30T16:35:01.857972432Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}
