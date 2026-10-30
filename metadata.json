@@ -1,0 +1,6 @@
+{
+  "name": "A Special Delivery for Dr. Panda",
+  "description": "A magical 2D anime chibi birthday delivery experience for Dr. Panda from Roonil Wazlib.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
