@@ -1,0 +1,6 @@
+{
+  "name": "A Special Delivery for Dr. Panda",
+  "description": "A 2D anime chibi animated birthday story featuring a tiny wizard panda delivering a sealed letter in a Hogwarts-inspired medical ward.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

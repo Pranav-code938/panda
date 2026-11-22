@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif-wizard: "Cormorant Garamond", Georgia, serif;
+  --font-cursive-wizard: "Dancing Script", cursive;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #18141c;
+    color: #f5ead2;
+    font-family: var(--font-serif-wizard);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Subtle floating candle & mote keyframes (compositor-only transform + opacity) */
+@keyframes floatCandleSlow {
+  0%,
+  100% {
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0, -7px, 0);
+  }
+}
+
+@keyframes floatCandleAlt {
+  0%,
+  100% {
+    transform: translate3d(0, 0px, 0);
+  }
+  50% {
+    transform: translate3d(0, 6px, 0);
+  }
+}
+
+@keyframes candleFlicker {
+  0%,
+  100% {
+    opacity: 0.88;
+    transform: scale(1);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.06, 0.96);
+  }
+  75% {
+    opacity: 0.82;
+    transform: scale(0.96, 1.04);
+  }
+}
+
+@keyframes moteDrift {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.75);
+  }
+  25% {
+    opacity: 0.72;
+  }
+  75% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(6px, -28px, 0) scale(1.05);
+  }
+}
+
+@keyframes goldBurstParticle {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.4);
+  }
+  20% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--tx, 0px), var(--ty, -80px), 0) scale(1.1);
+  }
+}
+
+.animate-candle-slow {
+  animation: floatCandleSlow 4.8s ease-in-out infinite;
+}
+
+.animate-candle-alt {
+  animation: floatCandleAlt 5.6s ease-in-out infinite;
+}
+
+.animate-flame {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: candleFlicker 2.6s ease-in-out infinite;
+}
+
+.animate-mote {
+  animation: moteDrift 6.5s ease-in-out infinite;
+}
+
+.animate-gold-particle {
+  animation: goldBurstParticle 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom parchment scrollbar for long letters */
+.parchment-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.parchment-scroll::-webkit-scrollbar-track {
+  background: rgba(122, 92, 54, 0.08);
+  border-radius: 9999px;
+}
+
+.parchment-scroll::-webkit-scrollbar-thumb {
+  background: rgba(122, 92, 54, 0.32);
+  border-radius: 9999px;
+}
+
+.parchment-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 92, 54, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-candle-slow,
+  .animate-candle-alt,
+  .animate-flame,
+  .animate-mote,
+  .animate-gold-particle {
+    animation: none !important;
+  }
+}
